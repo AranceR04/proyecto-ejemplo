@@ -15,3 +15,40 @@ Apartado 1)
     </style>
 </head>
 <body>
+
+
+Apartado 2)
+<div class="calculator">
+    <h2>Calculadora PHP</h2>
+    <form method="POST" action="">
+        <!-- Primer número -->
+        <input type="number" name="num1" step="any" placeholder="Primer número" required>
+        
+        <!-- Selector de operaciones -->
+        <select name="operacion" required>
+            <option value="suma">Sumar (+)</option>
+            <option value="resta">Restar (-)</option>
+            <option value="multiplicacion">Multiplicar (*)</option>
+            <option value="division">Dividir (/)</option>
+        </select>
+        
+        <!-- Segundo número -->
+        <input type="number" name="num2" step="any" placeholder="Segundo número" required>
+        
+        <!-- Botón de envío -->
+        <input type="submit" name="calcular" value="Calcular">
+    </form>
+
+Apartado 3)
+<div class="result">
+        <?php
+        if (isset($_POST['calcular'])) {
+            // Captura de datos de los inputs mediante el atributo 'name'
+            $num1 = $_POST['num1'];
+            $num2 = $_POST['num2'];
+            $operacion = $_POST['operacion'];
+            $resultado = 0;
+
+
+            // Validación de seguridad para confirmar que son números válidos
+            if (is_numeric($num1) && is_numeric($num2)) {
